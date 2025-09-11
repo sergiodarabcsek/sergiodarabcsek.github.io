@@ -16,6 +16,10 @@ body{
   background:var(--bg);
 }
 
+.WARNING {
+  color: red;
+}
+
 /* PAGE WRAPPER */
 .page{
   max-width:900px;
