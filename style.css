@@ -32,13 +32,19 @@ body{
   background:var(--navy);
   color:#fff;
   text-align:center;
-  padding:32px 20px 26px;
+  padding:32px 20px 22px;
 }
 .name{
   font-size:44px;
   letter-spacing:.4px;
   font-weight:700;
-  margin:0;
+  margin:0 0 6px 0;
+}
+.subtitle{
+  text-transform:uppercase;
+  letter-spacing:6px;             /* creates the spaced-out look */
+  font-size:12px;
+  opacity:.95;
 }
 
 /* GRID */
@@ -72,14 +78,8 @@ p{margin:0 0 .55rem}
 /* LISTS */
 ul{margin:.25rem 0 .75rem 1.05rem}
 li{margin:.25rem 0}
-
-/* Multi-level bullets to match PDF */
 .bullets{margin-left:1.05rem; list-style:disc;}
-.bullets > li{margin:.28rem 0;}
-.bullets > li > ul{margin:.25rem 0 .35rem 1.05rem; list-style:circle;}
-.bullets > li > ul > li{margin:.22rem 0;}
-.bullets > li > ul > li > ul{margin:.2rem 0 .3rem 1.05rem; list-style:square;}
-.bullets > li > ul > li > ul > li{margin:.18rem 0;}
+.bullets li{margin:.28rem 0;}
 
 /* WORK ENTRIES */
 .job{margin:0 0 10px;padding-bottom:10px;border-bottom:1px solid var(--rule);}
