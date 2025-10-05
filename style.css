@@ -100,6 +100,7 @@ li{margin:.25rem 0}
 }
 .where{font-weight:600;}
 .when{color:var(--sub);font-size:.92rem;}
+.job-title .when{ display:block; width:100%; margin-top:2px; }  /* forces new line */
 .place{color:var(--sub);font-size:.92rem;}
 
 /* AWARDS */
