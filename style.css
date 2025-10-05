@@ -42,7 +42,7 @@ body{
 }
 .subtitle{
   text-transform:uppercase;
-  letter-spacing:6px;             /* creates the spaced-out look */
+  letter-spacing:6px;  /* spaced-out look */
   font-size:12px;
   opacity:.95;
 }
@@ -50,7 +50,7 @@ body{
 /* GRID */
 .content.two-col{
   display:grid;
-  grid-template-columns: 0.92fr 1.35fr; /* narrow left column like the PDF */
+  grid-template-columns: 1.35fr 0.92fr; /* LEFT = Profile+Work, RIGHT = Education+Skills+Awards+Contact */
   gap:22px;
   padding:22px;
 }
@@ -69,7 +69,7 @@ body{
   border:1px solid var(--rule);
   border-radius:8px;
 }
-.section-body{padding:12px 2px 2px 2px;color:var(--ink);}
+.section-body{padding:12px 2px 2px;color:var(--ink);}
 p{margin:0 0 .55rem}
 .muted{color:var(--sub)}
 .small{font-size:.95rem}
@@ -78,8 +78,14 @@ p{margin:0 0 .55rem}
 /* LISTS */
 ul{margin:.25rem 0 .75rem 1.05rem}
 li{margin:.25rem 0}
+
+/* Multi-level bullets (layered) */
 .bullets{margin-left:1.05rem; list-style:disc;}
-.bullets li{margin:.28rem 0;}
+.bullets > li{margin:.28rem 0;}
+.bullets > li > ul{margin:.25rem 0 .35rem 1.05rem; list-style:circle;}
+.bullets > li > ul > li{margin:.22rem 0;}
+.bullets > li > ul > li > ul{margin:.2rem 0 .3rem 1.05rem; list-style:square;}
+.bullets > li > ul > li > ul > li{margin:.18rem 0;}
 
 /* WORK ENTRIES */
 .job{margin:0 0 10px;padding-bottom:10px;border-bottom:1px solid var(--rule);}
