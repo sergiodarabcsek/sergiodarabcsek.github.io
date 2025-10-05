@@ -44,7 +44,7 @@ body{
 /* GRID */
 .content.two-col{
   display:grid;
-  grid-template-columns: 0.92fr 1.35fr; /* narrower left sidebar like the PDF */
+  grid-template-columns: 0.92fr 1.35fr; /* narrow left column like the PDF */
   gap:22px;
   padding:22px;
 }
@@ -56,7 +56,7 @@ body{
   background:var(--pill);
   color:#394156;
   font-weight:800;
-  letter-spacing:2px;              /* stronger letter spacing to mimic PDF caps */
+  letter-spacing:2px;
   text-transform:uppercase;
   font-size:12px;
   padding:10px 12px;
@@ -72,8 +72,14 @@ p{margin:0 0 .55rem}
 /* LISTS */
 ul{margin:.25rem 0 .75rem 1.05rem}
 li{margin:.25rem 0}
-.bullets{margin-left:1.05rem}
-.bullets li{margin:.28rem 0}
+
+/* Multi-level bullets to match PDF */
+.bullets{margin-left:1.05rem; list-style:disc;}
+.bullets > li{margin:.28rem 0;}
+.bullets > li > ul{margin:.25rem 0 .35rem 1.05rem; list-style:circle;}
+.bullets > li > ul > li{margin:.22rem 0;}
+.bullets > li > ul > li > ul{margin:.2rem 0 .3rem 1.05rem; list-style:square;}
+.bullets > li > ul > li > ul > li{margin:.18rem 0;}
 
 /* WORK ENTRIES */
 .job{margin:0 0 10px;padding-bottom:10px;border-bottom:1px solid var(--rule);}
