@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sergio Darabcsek</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body class="site">
+    <header>
+      <!-- Major part: branding + primary navigation -->
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+        <!-- REPLACE: Brand - change image src and company name as needed -->
+
+
+        <!--<div class="brand">
+          
+          <a href="/"><img src="/images/hwl-logo.svg" alt="HWL logo"></a>
+        -->
+          <div>
+            <a class="brand-link" href="/home/homePage.html" aria-label="Go to home">
+              <strong>Sergio Darabcsek</strong>
+            </a>
+            <div class="muted">Just a Cool Guy</div>
+          </div>
+        <!--</div>-->
+
+        <!-- REPLACE: Primary nav - edit, remove, or add links for this page -->
+        <nav aria-label="Primary">
+          <ul>
+            <!--<li><a href="/services/">Services</a></li>-->
+            <li><a href="../aboutMe.html/index.html">About Me</a></li>
+            <li><a href="../resume/">Resume</a></li>
+            <li><a href="../photos.html/index.html">Photos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Major part: hero (page title / tagline) - REPLACE title & subtitle -->
+      <section class="hero">
+        <div>
+          <h1><!-- REPLACE: Page title -->Sergio Darabcsek</h1>
+          <p class="muted"><!-- REPLACE: Short tagline -->Woohooooo</p>
+        </div>
+      </section>
+
+      <!-- Major part: main content. Replace or copy the card block below. -->
+      <section style="margin-top:1rem">
+        <h2><!-- REPLACE: Section heading -->Explore -----------------------------------------------------------This site is still a work in progress--------------------------------------------------------------------</h2>
+
+        <!-- COPYABLE BLOCK: duplicate <article class="card"> to add more items -->
+        <div class="grid">
+          <a href="#ABOUT-ME-PAGE-URL" style="text-decoration: none;">
+            <article class="card">
+              <h3><!-- REPLACE: Card title -->About Me</h3>
+              <!-- REPLACE: Image (optional). Keep the onerror handler to hide broken images during development -->
+              <img src="/images/home/fertilizers.webp" alt="Service A image" onerror="this.style.display='none'">
+              <p class="muted"><!-- REPLACE: short description -->Short description. Keep it concise so you can copy this block to other pages.</p>
+            </article>
+          </a>
+
+          <!-- Example of a card without image -->
+          <a href="../resume/index.html" style="text-decoration: none;">
+            <article class="card">
+              <h3><!-- REPLACE: Card title -->Resume</h3>
+              <p class="muted"><!-- REPLACE: description -->Another short description. Replace heading, image, and text as needed.</p>
+            </article>
+          </a>
+
+          <a href="#PHOTOS-PAGE-URL" style="text-decoration: none;">
+            <article class="card">
+              <h3><!-- REPLACE: Card title -->Photos</h3>
+              <p class="muted"><!-- REPLACE: description -->A simple cardccccc; no extra decorative classes to worry about.</p>
+            </article>
+          </a>
+        </div>
+        <!-- END COPYABLE BLOCK -->
+      </section>
+    </main>
+
+    <footer>
+      <!-- Major part: contact/legal/social. Keep it small and repeatable. -->
+      <div class="cols">
+        <section>
+          <strong>Contact</strong>
+          <!-- REPLACE: contact address and phone -->
+          <address class="muted">10 Barnes St.<br>Providence RI 02906<br><a href="tel:+16652848548">1-665-284-8548</a></address>
+        </section>
+
+        <section>
+          <strong>Legal</strong>
+          <p class="muted">© 2021 Herbert West Landscaping<br><a href="/about/privacy-policy.html">Privacy Policy</a></p>
+        </section>
+
+        <section>
+          <strong>Follow</strong>
+          <p class="muted"><a href="https://facebook.com">Facebook</a> · <a href="https://www.instagram.com">Instagram</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

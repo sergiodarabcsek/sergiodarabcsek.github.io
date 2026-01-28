@@ -8,7 +8,7 @@
   --white:#ffffff;
 }
 *{box-sizing:border-box}
-html,body{height:100%}
+html{height:100%}
 body{
   margin:0;
   font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
@@ -19,7 +19,7 @@ body{
 /* PAGE WRAPPER */
 .page{
   max-width:900px;
-  margin:32px auto;
+  margin:32px auto 60px auto;
   background:var(--white);
   border-radius:10px;
   box-shadow:0 6px 18px rgba(0,0,0,.06);
@@ -29,7 +29,7 @@ body{
 
 /* HEADER */
 .banner{
-  background:var(--navy);
+  background:#1f2a44;
   color:#fff;
   text-align:center;
   padding:32px 20px 22px;
@@ -120,3 +120,32 @@ li{margin:.25rem 0}
   .content.two-col{grid-template-columns:1fr}
   .name{font-size:36px}
 }
+
+/* HOME PAGE STYLES */
+.site{min-height:100vh;display:flex;flex-direction:column}
+header{background:#e2e6ef;padding:1rem}
+footer{background:#e2e6ef;padding:1rem}
+main{flex:1;padding:1rem}
+
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+nav a{color:var(--ink);text-decoration:none}
+nav a:hover,nav a:focus{text-decoration:underline}
+
+.brand-link{color:var(--ink);text-decoration:none;display:inline-block}
+.brand-link:hover,.brand-link:focus{text-decoration:underline}
+.brand-link:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+
+.hero{background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;padding:3rem 1rem;text-align:center}
+.hero h1{margin:.25rem 0;font-size:1.6rem}
+.hero p{margin:.25rem 0;color:white}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;width:100%;align-items:stretch}
+.grid > a{display:block;height:100%}
+.card{background:white;border:1px solid var(--rule);padding:1rem;border-radius:6px;height:100%;display:flex;flex-direction:column}
+.card img{max-width:100%;height:auto;border-radius:4px}
+.card{transition:border-color .2s ease, box-shadow .2s ease}
+.card:hover{border-color:var(--navy);box-shadow:0 4px 14px rgba(31,42,68,.15)}
+
+footer .cols{display:flex;flex-wrap:wrap;gap:1rem}
+footer section{flex:1 1 200px}
+    
