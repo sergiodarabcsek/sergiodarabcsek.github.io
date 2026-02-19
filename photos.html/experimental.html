@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sergio Darabcsek</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body class="site">
+    <header>
+      <!-- Major part: branding + primary navigation -->
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+        <!-- REPLACE: Brand - change image src and company name as needed -->
+
+
+        <!--<div class="brand">
+          
+          <a href="/"><img src="/images/hwl-logo.svg" alt="HWL logo"></a>
+        -->
+          <div>
+            <a class="brand-link" href="/" aria-label="Go to home">
+              <strong>Sergio Darabcsek</strong>
+            </a>
+            <div class="muted">Just a Cool Guy</div>
+          </div>
+        <!--</div>-->
+
+        <!-- REPLACE: Primary nav - edit, remove, or add links for this page -->
+        <nav aria-label="Primary">
+          <ul>
+            <!--<li><a href="/services/">Services</a></li>-->
+            <li><a href="../aboutMe.html/index.html">About Me</a></li>
+            <li><a href="../resume/">Resume</a></li>
+            <li><a href="../photos.html/index.html">Photos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Major part: hero (page title / tagline) - REPLACE title & subtitle -->
+      <section class="hero">
+        <div>
+          <h1><!-- REPLACE: Page title -->Experimental</h1>
+          <p class="muted"><!-- REPLACE: Short tagline -->Abstracts, long exposure, and creative edits.</p>
+        </div>
+      </section>
+
+      <!-- Major part: main content. Replace or copy the card block below. -->
+      <section style="margin-top:1rem">
+        <h2><!-- REPLACE: Section heading -->Experimental Collection</h2>
+        <p class="muted"><!-- REPLACE: short description -->Add your experimental photos in the slots below. Replace each placeholder with your own image and caption.</p>
+      </section>
+
+      <section style="margin-top:1rem">
+        <div class="grid photo-grid">
+
+          <figure class="card photo-card">
+            <img src="../photos/experimental/lionLightDecorationAtNight.JPG" alt="Lion light decoration at night" onerror="this.style.display='none'">
+            <figcaption class="muted">Lion light decoration at night</figcaption>
+          </figure>
+
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <!-- Major part: contact/legal/social. Keep it small and repeatable. -->
+      <div class="cols">
+        <section>
+          <strong>Contact</strong>
+          <!-- REPLACE: contact address and phone -->
+          <br><a href="mailto:darabcseksergio02@gmail.com">darabcseksergio02@gmail.com</a><br><p>Phone   (636)-515-0049</p>
+        </section>
+
+        <section>
+          <strong>Filling up</strong>
+          <p class="muted">Empty<br><a href="#a Link if I want">Space!</a></p>
+        </section>
+
+        <section>
+          <strong>Follow</strong>
+          <p class="muted"><a href="https://www.linkedin.com/in/sergiodarabcsek/">LinkedIn</a> · <a href="https://www.instagram.com/sergio_darabcsek/">Instagram</a></p>
+        </section>
+      </div>
+    </footer>
+
+    <div class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" aria-label="Close image">×</button>
+      <div class="lightbox-inner">
+        <img class="lightbox-image" alt="">
+        <p class="lightbox-caption"></p>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        const lightbox = document.querySelector('.lightbox');
+        if (!lightbox) return;
+        const lightboxImage = lightbox.querySelector('.lightbox-image');
+        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+
+        const open = (img) => {
+          const caption = img.closest('figure')?.querySelector('figcaption')?.textContent?.trim() || '';
+          lightboxImage.src = img.src;
+          lightboxImage.alt = img.alt || 'Expanded photo';
+          lightboxCaption.textContent = caption;
+          lightbox.classList.add('open');
+          lightbox.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('no-scroll');
+        };
+
+        const close = () => {
+          lightbox.classList.remove('open');
+          lightbox.setAttribute('aria-hidden', 'true');
+          lightboxImage.src = '';
+          lightboxCaption.textContent = '';
+          document.body.classList.remove('no-scroll');
+        };
+
+        document.addEventListener('click', (e) => {
+          const card = e.target.closest('.photo-card');
+          if (card) {
+            const img = card.querySelector('img');
+            if (img && img.style.display !== 'none') {
+              open(img);
+            }
+            return;
+          }
+          if (e.target === lightbox) {
+            close();
+          }
+        });
+
+        closeBtn.addEventListener('click', close);
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+            close();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
