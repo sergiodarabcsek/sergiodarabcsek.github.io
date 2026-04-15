@@ -47,15 +47,73 @@
       <!-- Major part: hero (page title / tagline) - REPLACE title & subtitle -->
       <section class="hero hero--about">
         <div class="hero-content">
-          <h1><!-- REPLACE: Page title -->About Me</h1>
-          <p class="muted"><!-- REPLACE: Short tagline -->Short page subtitle</p>
+          <h1 class="falling-about-title">
+            <span class="title-base">About M</span>
+            <span class="flat-es"><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span></span>
+            <span class="falling-es"><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span><span>e</span></span>
+          </h1>
         </div>
       </section>
 
       <!-- Major part: main content. Replace or copy the card block below. -->
       <section style="margin-top:1rem">
-        <h2><!-- REPLACE: Section heading -->Section Heading</h2>
-        <p class="muted"><!-- REPLACE: short description -->Oh, there's nothing here...<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>It's too quiet...</p>
+        <div class="content two-col">
+          <!-- Left: About Me Info & Cards -->
+          <div class="col-left">
+            <section class="section" style="border-radius:10px; overflow:hidden;">
+              <div class="section-title" style="border-radius:10px 10px 0 0;">Who I Am</div>
+              <div class="section-body" style="border:1px solid var(--rule); border-radius:0 0 10px 10px; padding:12px 14px;">
+                <p>Hi! I'm Sergio Darabcsek, a passionate individual with a love for technology, sports, and creative pursuits. I enjoy exploring new ideas, building innovative projects, and connecting with people from all walks of life. Whether I'm coding, playing soccer, or learning something new, I always strive to bring energy and curiosity to everything I do. Explore the cards below to learn more about my background, fun facts, and the hobbies that keep me inspired!</p>
+              </div>
+            </section>
+            <div class="info-card-row">
+              <a class="info-card big-card" href="informationalCards/projects.html">
+                <img src="https://placehold.co/120x120?text=Projects" alt="Projects" class="info-img">
+                <div class="card-title">Projects</div>
+              </a>
+              <a class="info-card big-card" href="informationalCards/fun-facts.html">
+                <img src="https://placehold.co/120x120?text=Fun+Facts" alt="Fun Facts" class="info-img">
+                <div class="card-title">Fun Facts</div>
+              </a>
+              <a class="info-card big-card" href="informationalCards/sports-hobbies.html">
+                <img src="https://placehold.co/120x120?text=Sports+%2F+Hobbies" alt="Sports / Hobbies" class="info-img">
+                <div class="card-title">Sports / Hobbies</div>
+              </a>
+            </div>
+            <section class="section" style="margin-top:1rem; border-radius:10px; overflow:hidden;">
+              <div class="section-body" style="border:1px solid var(--rule); border-radius:10px; padding:12px 14px;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat, nisl at dignissim varius, magna purus faucibus nibh, sit amet malesuada justo nulla non neque. Curabitur posuere, urna sed facilisis cursus, lorem arcu fermentum velit, vitae consequat justo lectus at orci.</p>
+              </div>
+            </section>
+          </div>
+          <!-- Right: News Section -->
+          <div class="col-right" style="background:var(--rule);border-radius:10px;padding:16px;overflow-y:auto;max-height:600px;min-width:0;">
+            <div class="section-title" style="background:var(--rule);color:var(--ink);margin-bottom:10px;">Sergio's News</div>
+            <div style="display:flex;flex-direction:column;gap:18px;">
+              <a class="news-card wide-news-card" href="newsArticles/news1.html">
+                <div class="news-content">
+                  <div class="card-title">Exciting Update</div>
+                  <div class="card-desc">Check out my latest project and what I've been working on recently!</div>
+                </div>
+                <img src="https://placehold.co/180x110?text=Update" alt="News 1" class="news-img news-img-right">
+              </a>
+              <a class="news-card wide-news-card" href="newsArticles/news2.html">
+                <div class="news-content">
+                  <div class="card-title">Event Highlights</div>
+                  <div class="card-desc">Highlights from a recent event I attended and my experiences there.</div>
+                </div>
+                <img src="https://placehold.co/180x110?text=Event" alt="News 2" class="news-img news-img-right">
+              </a>
+              <a class="news-card wide-news-card" href="newsArticles/news3.html">
+                <div class="news-content">
+                  <div class="card-title">Personal Milestone</div>
+                  <div class="card-desc">Celebrating a recent achievement or milestone in my journey.</div>
+                </div>
+                <img src="https://placehold.co/180x110?text=Milestone" alt="News 3" class="news-img news-img-right">
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
