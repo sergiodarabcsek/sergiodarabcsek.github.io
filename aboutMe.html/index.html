@@ -56,14 +56,22 @@
       </section>
 
       <!-- Major part: main content. Replace or copy the card block below. -->
-      <section style="margin-top:1rem">
-        <div class="content two-col">
+      <section class="about-mobile-tabs-wrap" style="margin-top:1rem">
+        <input class="about-tab-input" type="radio" name="about-page-tab" id="about-tab-who" checked>
+        <input class="about-tab-input" type="radio" name="about-page-tab" id="about-tab-news">
+
+        <div class="about-tab-list" aria-label="About Me sections">
+          <label class="about-tab" for="about-tab-who">Who I Am</label>
+          <label class="about-tab" for="about-tab-news">News</label>
+        </div>
+
+        <div class="content two-col about-tab-panels">
           <!-- Left: About Me Info & Cards -->
-          <div class="col-left">
+          <div class="col-left who-i-am-panel">
             <section class="section" style="border-radius:10px; overflow:hidden;">
-              <div class="section-title" style="border-radius:10px 10px 0 0;">Who I Am</div>
-              <div class="section-body" style="border:1px solid var(--rule); border-radius:0 0 10px 10px; padding:12px 14px;">
-                <p>Hi! I'm Sergio Darabcsek, a passionate individual with a love for technology, sports, and creative pursuits. I enjoy exploring new ideas, building innovative projects, and connecting with people from all walks of life. Whether I'm coding, playing soccer, or learning something new, I always strive to bring energy and curiosity to everything I do. Explore the cards below to learn more about my background, fun facts, and the hobbies that keep me inspired!</p>
+              <div class="section-title who-i-am-side-heading" style="border-radius:10px 10px 0 0;">Who I Am</div>
+              <div class="section-body who-i-am-intro" style="border:none; border-radius:10px; padding:12px 14px;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat, nisl at dignissim varius, magna purus faucibus nibh, sit amet malesuada justo nulla non neque. Curabitur posuere, urna sed facilisis cursus, lorem arcu fermentum velit, vitae consequat justo lectus at orci.</p>
               </div>
             </section>
             <div class="info-card-row">
@@ -80,14 +88,14 @@
                 <div class="card-title">Sports / Hobbies</div>
               </a>
             </div>
-            <section class="section" style="margin-top:1rem; border-radius:10px; overflow:hidden;">
-              <div class="section-body" style="border:1px solid var(--rule); border-radius:10px; padding:12px 14px;">
+            <section class="section" style="margin-top:1rem; border-radius:0 0 10px 10px; overflow:hidden;">
+              <div class="section-body" style="border:none; border-radius:0 0 10px 10px; padding:12px 14px;">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat, nisl at dignissim varius, magna purus faucibus nibh, sit amet malesuada justo nulla non neque. Curabitur posuere, urna sed facilisis cursus, lorem arcu fermentum velit, vitae consequat justo lectus at orci.</p>
               </div>
             </section>
           </div>
           <!-- Right: News Section -->
-          <div class="col-right" style="background:var(--rule);border-radius:10px;padding:16px;overflow-y:auto;max-height:600px;min-width:0;">
+          <div class="col-right news-panel" style="background:var(--rule);border-radius:0 0 10px 10px;padding:16px;overflow-y:auto;max-height:600px;min-width:0;">
             <div class="section-title" style="background:var(--rule);color:var(--ink);margin-bottom:10px;">Sergio's News</div>
             <div style="display:flex;flex-direction:column;gap:18px;">
               <a class="news-card wide-news-card" href="newsArticles/news1.html">
@@ -126,14 +134,10 @@
           <br><a href="mailto:darabcseksergio02@gmail.com">darabcseksergio02@gmail.com</a><br><p>Phone   (636)-515-0049</p>
         </section>
 
-        <section>
-          <strong>Filling up</strong>
-          <p class="muted">Empty<br><a href="#a Link if I want">Space!</a></p>
-        </section>
 
         <section>
           <strong>Follow</strong>
-          <p class="muted"><a href="https://www.linkedin.com/in/sergiodarabcsek/">LinkedIn</a> · <a href="https://www.instagram.com/sergio_darabcsek/">Instagram</a></p>
+          <p class="muted"><a href="https://www.linkedin.com/in/sergiodarabcsek/">LinkedIn</a><br><a href="https://www.instagram.com/sergio_darabcsek/">Instagram</a></p>
         </section>
       </div>
     </footer>
