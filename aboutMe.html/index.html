@@ -76,15 +76,15 @@
             </section>
             <div class="info-card-row">
               <a class="info-card big-card" href="informationalCards/projects.html">
-                <img src="https://placehold.co/120x120?text=Projects" alt="Projects" class="info-img">
-                <div class="card-title">Projects</div>
-              </a>
+                  <img src="https://placehold.co/120x120?text=Projects" alt="Projects placeholder" class="info-img">
+                  <div class="card-title">Projects</div>
+                </a>
               <a class="info-card big-card" href="informationalCards/fun-facts.html">
                 <img src="https://placehold.co/120x120?text=Fun+Facts" alt="Fun Facts" class="info-img">
                 <div class="card-title">Fun Facts</div>
               </a>
               <a class="info-card big-card" href="informationalCards/sports-hobbies.html">
-                <img src="https://placehold.co/120x120?text=Sports+%2F+Hobbies" alt="Sports / Hobbies" class="info-img">
+                <img src="../photos/About%20Me/SergioPoleVault.jpeg" alt="Sergio pole vault" class="info-img">
                 <div class="card-title">Sports / Hobbies</div>
               </a>
             </div>
@@ -95,15 +95,23 @@
             </section>
           </div>
           <!-- Right: News Section -->
-          <div class="col-right news-panel" style="background:var(--rule);border-radius:0 0 10px 10px;padding:16px;overflow-y:auto;max-height:600px;min-width:0;">
+          <div class="col-right news-panel" style="background:var(--rule);border-radius:0 0 10px 10px;padding:16px;min-width:0;">
             <div class="section-title" style="background:var(--rule);color:var(--ink);margin-bottom:10px;">Sergio's News</div>
-            <div style="display:flex;flex-direction:column;gap:18px;">
+            <div class="news-panel-body">
+              <div class="news-card-list">
               <a class="news-card wide-news-card" href="newsArticles/news1.html">
                 <div class="news-content">
-                  <div class="card-title">Exciting Update</div>
-                  <div class="card-desc">Check out my latest project and what I've been working on recently!</div>
+                  <div class="card-title">April 18th | SIUE Business Legacy Night</div>
+                  <div class="card-desc">Highlights from the SIUE Business Legacy Night event.</div>
                 </div>
-                <img src="https://placehold.co/180x110?text=Update" alt="News 1" class="news-img news-img-right">
+                <img src="/photos/Home/SergioBuisnessLegacySpeech.jpg" alt="Sergio Business Legacy Speech" class="news-img news-img-right">
+              </a>
+              <a class="news-card wide-news-card" href="newsArticles/news4.html">
+                <div class="news-content">
+                  <div class="card-title">April 16th | Website Complete!</div>
+                  <div class="card-desc">My website is finished and live with the latest updates.</div>
+                </div>
+                <img src="../photos/About%20Me/News%20Articles/sergioCodingWebsiteWithBlueBackground.JPG" alt="Sergio coding website" class="news-img news-img-right">
               </a>
               <a class="news-card wide-news-card" href="newsArticles/news2.html">
                 <div class="news-content">
@@ -119,12 +127,34 @@
                 </div>
                 <img src="https://placehold.co/180x110?text=Milestone" alt="News 3" class="news-img news-img-right">
               </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
-
+    <script>
+      function syncNewsPanelHeight() {
+        const leftPanel = document.querySelector('.who-i-am-panel');
+        const newsPanel = document.querySelector('.news-panel');
+        if (!leftPanel || !newsPanel) return;
+        const desktopView = window.matchMedia('(min-width: 701px)').matches;
+        const leftVisible = leftPanel.offsetHeight > 0;
+        if (desktopView && leftVisible) {
+          newsPanel.style.height = 'auto';
+          const leftHeight = leftPanel.getBoundingClientRect().height;
+          newsPanel.style.height = `${leftHeight}px`;
+        } else {
+          newsPanel.style.height = 'auto';
+        }
+      }
+      document.querySelectorAll('.about-tab-input').forEach(input => {
+        input.addEventListener('change', syncNewsPanelHeight);
+      });
+      window.addEventListener('load', syncNewsPanelHeight);
+      window.addEventListener('resize', syncNewsPanelHeight);
+      window.addEventListener('orientationchange', syncNewsPanelHeight);
+    </script>
     <footer>
       <!-- Major part: contact/legal/social. Keep it small and repeatable. -->
       <div class="cols">
