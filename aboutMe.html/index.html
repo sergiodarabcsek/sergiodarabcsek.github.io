@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
 
   <body class="site">
     <header>
-      <!-- Major part: branding + primary navigation -->
+      <!-- PAGE HEADER: branding and primary navigation shared across the site -->
       <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
         <!-- REPLACE: Brand - change image src and company name as needed -->
 
@@ -31,7 +31,7 @@
           </div>
         <!--</div>-->
 
-        <!-- REPLACE: Primary nav - edit, remove, or add links for this page -->
+        <!-- PAGE HEADER: primary navigation for this page -->
         <nav aria-label="Primary">
           <ul>
             <!--<li><a href="/services/">Services</a></li>-->
@@ -44,7 +44,7 @@
     </header>
 
     <main>
-      <!-- Major part: hero (page title / tagline) - REPLACE title & subtitle -->
+      <!-- ABOUT HERO: compact title banner; CSS changes spacing by viewport -->
       <section class="hero hero--about">
         <div class="hero-content">
           <h1 class="falling-about-title">
@@ -55,7 +55,7 @@
         </div>
       </section>
 
-      <!-- Major part: main content. Replace or copy the card block below. -->
+      <!-- ABOUT LAYOUT: same content source, desktop shows both columns and mobile switches to tabs -->
       <section class="about-mobile-tabs-wrap" style="margin-top:1rem">
         <input class="about-tab-input" type="radio" name="about-page-tab" id="about-tab-who" checked>
         <input class="about-tab-input" type="radio" name="about-page-tab" id="about-tab-news">
@@ -66,27 +66,27 @@
         </div>
 
         <div class="content two-col about-tab-panels">
-          <!-- Left: About Me Info & Cards -->
+          <!-- Desktop primary column: identity, intro, and informational cards -->
           <div class="col-left who-i-am-panel">
             <section class="section" style="border-radius:10px; overflow:hidden;">
               <div class="section-title who-i-am-side-heading" style="border-radius:10px 10px 0 0;">Who I Am</div>
               <div class="section-body who-i-am-intro" style="border:none; border-radius:10px; padding:12px 14px;">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat, nisl at dignissim varius, magna purus faucibus nibh, sit amet malesuada justo nulla non neque. Curabitur posuere, urna sed facilisis cursus, lorem arcu fermentum velit, vitae consequat justo lectus at orci.</p>
+                <p>If you are reading this, then you probably don't care or are bored of all the boring resume stuff and are more interested in the meats and potatoes of who I am. It might surprise you to hear this, but I am more than just a genius businessman. I am also a guy who likes to learn whatever interest him (which is everything) and has to many hobbies to count. Because of this I put everything into three different organized sections for you since I'm so nice.</p>
               </div>
             </section>
             <div class="info-card-row">
-              <a class="info-card big-card" href="informationalCards/projects.html">
-                  <img src="https://placehold.co/120x120?text=Projects" alt="Projects placeholder" class="info-img">
-                  <div class="card-title">Projects</div>
-                </a>
-              <a class="info-card big-card" href="informationalCards/fun-facts.html">
-                <img src="https://placehold.co/120x120?text=Fun+Facts" alt="Fun Facts" class="info-img">
-                <div class="card-title">Fun Facts</div>
-              </a>
               <a class="info-card big-card" href="informationalCards/sports-hobbies.html">
                 <img src="../photos/About%20Me/SergioPoleVault.jpeg" alt="Sergio pole vault" class="info-img">
                 <div class="card-title">Sports / Hobbies</div>
               </a>
+              <a class="info-card big-card" href="informationalCards/fun-facts.html">
+                <img src="https://placehold.co/120x120?text=Fun+Facts" alt="Fun Facts" class="info-img">
+                <div class="card-title">Fun Facts</div>
+              </a>
+              <a class="info-card big-card" href="informationalCards/projects.html">
+                  <img src="https://placehold.co/120x120?text=Projects" alt="Projects placeholder" class="info-img">
+                  <div class="card-title">Projects</div>
+                </a>
             </div>
             <section class="section" style="margin-top:1rem; border-radius:0 0 10px 10px; overflow:hidden;">
               <div class="section-body" style="border:none; border-radius:0 0 10px 10px; padding:12px 14px;">
@@ -94,7 +94,7 @@
               </div>
             </section>
           </div>
-          <!-- Right: News Section -->
+          <!-- Secondary column: news feed on desktop, mobile tab panel in narrow view -->
           <div class="col-right news-panel" style="background:var(--rule);border-radius:0 0 10px 10px;padding:16px;min-width:0;">
             <div class="section-title" style="background:var(--rule);color:var(--ink);margin-bottom:10px;">Sergio's News</div>
             <div class="news-panel-body">
@@ -173,3 +173,4 @@
     </footer>
   </body>
 </html>
+

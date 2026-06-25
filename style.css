@@ -1,9 +1,19 @@
-/* ABOUT ME INFO CARDS - Enhanced */
+/* STYLE MAP
+Shared structure:
+1. Page-specific components first, so the page owns its content blocks.
+2. Global tokens and base document rules next.
+3. Shared site shells and reusable components after that.
+4. Responsive overrides at the end, from wider screens down to phones.
+
+Use desktop-only and mobile-only helpers only when a page truly needs different presentations.
+*/
+
+/* ABOUT PAGE: content blocks used by both desktop and mobile layouts */
 .info-card-row {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin: 28px 0 10px 0;
+  margin: 12px 0 10px 0;
   padding: 0 8px;
   width: 100%;
 }
@@ -16,7 +26,8 @@
   min-height: 250px;
   max-width: none;
   font-size: .98rem;
-  padding: 10px 8px 12px 8px;
+  padding: 8px 8px 10px 8px;
+  margin-bottom: 0;
   overflow: hidden;
   box-shadow: 0 4px 18px rgba(31,42,68,0.10);
 }
@@ -31,7 +42,7 @@
   background: #e2e6ef;
 }
 
-/* NEWS CARDS - Wide with image right */
+/* ABOUT PAGE: news cards with image on the right for wider layouts */
 .news-card.wide-news-card {
   flex-direction: row;
   align-items: center;
@@ -58,7 +69,7 @@
   .info-card.big-card {
     min-height: 220px;
     font-size: .88rem;
-    padding: 10px 6px 10px 6px;
+    padding: 8px 6px 8px 6px;
   }
   .info-img {
     width: calc(100% - 10px);
@@ -89,7 +100,7 @@
     max-width: none;
     min-height: 185px;
     font-size: .76rem;
-    padding: 8px 4px 10px 4px;
+    padding: 7px 4px 8px 4px;
     margin-left: 0;
     margin-right: 0;
   }
@@ -112,7 +123,7 @@
     margin-left: 0;
   }
 }
-/* ABOUT ME CARDS */
+/* ABOUT PAGE: reusable card styles */
 .info-card {
   display: flex;
   align-items: center;
@@ -193,6 +204,7 @@
   }
 }
 
+/* ABOUT PAGE: tab state machine for the mobile-only mode */
 #about-tab-who:checked ~ .about-tab-list label[for="about-tab-who"] {
   background: var(--white);
   color: var(--ink);
@@ -241,7 +253,14 @@
 .who-i-am-side-heading{
   display:none;
 }
+.who-i-am-panel{
+  gap:8px;
+}
+.who-i-am-intro p{
+  margin-bottom:0;
+}
 
+/* ABOUT PAGE: desktop view keeps both columns visible side by side */
 @media (min-width: 701px) {
   .about-tab-list {
     display: none !important;
@@ -269,6 +288,7 @@
     border-radius:0 0 10px 10px !important;
   }
 }
+/* GLOBAL TOKENS: colors, theme values, and shared defaults */
 :root{
   --ink:#1b1f2a;
   --sub:#5b6375;
@@ -288,7 +308,7 @@ body{
   background:var(--bg);
 }
 
-/* PAGE WRAPPER */
+/* PAGE WRAPPER: framed content shell used by the resume page */
 .page{
   max-width:900px;
   margin:32px auto 60px auto;
@@ -299,7 +319,7 @@ body{
   border:1px solid #e9edf5;
 }
 
-/* HEADER */
+/* HEADER: shared site framing above the page content */
 .banner{
   background:#1f2a44;
   color:#fff;
@@ -325,13 +345,13 @@ body{
   grid-template-columns: 1.35fr 0.92fr; /* LEFT = Profile+Work, RIGHT = Education+Skills+Awards+Contact */
   gap:22px;
   padding:22px;
-  align-items: stretch;
+  align-items:start;
 }
 .content.two-col > * {
-  align-self: stretch;
+  align-self:start;
 }
-.col-left { display:flex; flex-direction:column; gap:14px; }
-.col-right { display:flex; flex-direction:column; gap:18px; padding-bottom:18px; }
+.col-left { display:flex; flex-direction:column; gap:14px; align-self:start; }
+.col-right { display:flex; flex-direction:column; gap:18px; padding-bottom:18px; align-self:start; }
 
 /* SECTION */
 .section{background:var(--white);}
@@ -408,14 +428,16 @@ li{margin:.25rem 0}
   .name{font-size:36px}
 }
 
-/* HOME PAGE STYLES */
+/* SHARED PAGE SHELLS: home page, footer, and document-wide layout helpers */
 .site{min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
 header{background:#e2e6ef;padding:1rem}
 footer{background:#e2e6ef;padding:1rem}
 main{flex:1;padding:1rem}
 .home-main{padding:0}
-.home-main > section:not(.hero){padding:1rem}
+.home-main > section:not(.hero){padding:1rem;position:relative;z-index:2;background:linear-gradient(to bottom, rgba(246,248,252,0) 0px, rgba(246,248,252,.7) 20px, var(--bg) 44px)}
+.home-main > section:not(.hero) > h2{text-align:center;transform:scale(1.08);transform-origin:center top;display:inline-block;width:100%;margin-top:0}
 
+/* ABOUT PAGE SHELL: one content source, two viewport presentations */
 .about-mobile-tabs-wrap{
   position:relative;
 }
@@ -462,6 +484,10 @@ main{flex:1;padding:1rem}
 .about-mobile-tabs-wrap .col-right{
   width:100%;
   margin:0;
+  align-self:start;
+}
+.about-mobile-tabs-wrap .news-panel{
+  align-self:flex-start;
 }
 .who-i-am-panel{
   border:1px solid var(--rule);
@@ -482,7 +508,7 @@ main{flex:1;padding:1rem}
   display:flex;
   flex-direction:column;
   gap:18px;
-  flex:0 1 auto;
+  flex:1 1 auto;
   min-height:0;
   overflow-y:auto;
   overflow-x:hidden;
@@ -581,15 +607,68 @@ main{flex:1;padding:1rem}
 .who-i-am-panel > .section:last-child .section-body{
   border-radius:0 0 10px 10px !important;
 }
+/* VIEWPORT HELPERS: useful when a page needs explicit desktop/mobile-only blocks */
+.desktop-only{display:block}
+.mobile-only{display:none}
+
+@media (max-width:700px){
+  .desktop-only{display:none !important}
+  .mobile-only{display:block !important}
+}
+
 .about-mobile-tabs-wrap .col-right{
   display:none;
   overflow:visible !important;
   max-height:none !important;
 }
 
+@media (min-width: 701px) {
+  .about-mobile-tabs-wrap .news-panel {
+    padding: 12px !important;
+  }
+  .about-mobile-tabs-wrap .news-panel .section-title {
+    margin-bottom: 8px !important;
+  }
+  .about-mobile-tabs-wrap .news-panel-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .about-mobile-tabs-wrap .news-panel-body .news-card-list {
+    gap: 14px;
+  }
+}
+
 nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
 nav a{color:var(--ink);text-decoration:none}
 nav a:hover,nav a:focus{text-decoration:underline}
+
+header nav[aria-label="Primary"] a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.32rem .56rem;
+  border:1px solid transparent;
+  border-radius:8px;
+  background:transparent;
+  text-decoration:none;
+  transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease,color .2s ease;
+}
+header nav[aria-label="Primary"] ul{
+  gap:.55rem;
+}
+header nav[aria-label="Primary"] a:hover,
+header nav[aria-label="Primary"] a:focus{
+  text-decoration:none;
+  background:var(--white);
+  border-color:#cfd5e2;
+  box-shadow:0 2px 8px rgba(31,42,68,.10);
+}
+header nav[aria-label="Primary"] a:focus-visible{
+  outline:2px solid var(--navy);
+  outline-offset:2px;
+}
 
 .brand-link{color:var(--ink);text-decoration:none;display:inline-block}
 .brand-link:hover,.brand-link:focus{text-decoration:underline}
@@ -602,6 +681,7 @@ nav a:hover,nav a:focus{text-decoration:underline}
 .mobile-siue{display:none;margin-top:.15rem;font-size:.95rem;font-weight:700;color:var(--sub)}
 .mobile-siue .siue{color:var(--siue-red)}
 
+/* HERO SYSTEM: shared banner rules for every page hero */
 .hero{
   --hero-image:none;
   position:relative;
@@ -638,11 +718,25 @@ nav a:hover,nav a:focus{text-decoration:underline}
   --hero-image:url('/photos/Home/sergioCodingWebsiteWithBlueBackground.JPG');
   align-items:center;
   padding:0;
+  overflow:visible;
+}
+.home-hero::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-90px;
+  height:90px;
+  background:linear-gradient(to bottom, rgba(108,155,213,.56) 0%, rgba(146,184,228,.34) 48%, rgba(198,216,238,.16) 74%, var(--bg) 100%);
+  pointer-events:none;
+  z-index:0;
 }
 .home-hero .hero-content{
   width:100%;
   max-width:680px;
   padding:0 2rem;
+  position:relative;
+  z-index:1;
 }
 .home-hero h1{
   margin:0;
@@ -743,6 +837,10 @@ nav a:hover,nav a:focus{text-decoration:underline}
   border-radius:4px;
   object-fit:cover;
 }
+.home-about-image{
+  transform:scale(1.08);
+  object-position:center 18%;
+}
 .card--media .card-media .media-placeholder{
   background:#f2f2f2;
   color:var(--sub);
@@ -806,8 +904,10 @@ nav a:hover,nav a:focus{text-decoration:underline}
   .card--media .card-media{flex:0 0 auto;width:100%;min-width:0}
   .card--media .card-media img,
   .card--media .card-media .media-placeholder{height:180px}
+  .home-about-image{object-position:center 14%;}
 }
 
+/* SITE: mobile navigation and about-page tab spacing */
 @media (max-width:700px){
   .breadcrumb{display:none}
   .mobile-siue{display:block}
@@ -835,6 +935,7 @@ nav a:hover,nav a:focus{text-decoration:underline}
   }
 }
 
+/* SITE: tablet layout adjustments */
 @media (max-width:820px){
   .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .collections-grid{grid-template-columns:repeat(2,minmax(220px,1fr))}
@@ -842,6 +943,7 @@ nav a:hover,nav a:focus{text-decoration:underline}
   .card--media .card-media{flex:0 0 auto;width:100%}
   .card--media .card-media img,
   .card--media .card-media .media-placeholder{height:180px}
+  .home-about-image{object-position:center 12%;}
   .hero{height:50vh;min-height:0;max-height:50vh;padding:0}
   .hero.hero--about{height:210px;min-height:210px;max-height:210px}
   .hero.has-hero-image::after{
@@ -853,19 +955,27 @@ nav a:hover,nav a:focus{text-decoration:underline}
     background-position:center center,center center;
     background-size:100% 100%,cover;
   }
+  .home-hero::before{
+    bottom:-96px;
+    height:96px;
+    background:linear-gradient(to bottom, rgba(121,166,220,.62) 0%, rgba(164,196,234,.38) 48%, rgba(204,222,241,.18) 74%, var(--bg) 100%);
+  }
   .hero-content{max-width:100%;padding:0 1.25rem 2.25rem 1.25rem}
   .hero h1{font-size:2.15rem}
   .hero p{font-size:1.05rem}
 }
 
+/* SITE: narrow mobile layout */
 @media (max-width:560px){
   .photo-grid{grid-template-columns:1fr}
   .collections-grid{grid-template-columns:1fr}
   .hero{height:50vh;min-height:0;max-height:50vh}
   .hero.hero--about{height:210px;min-height:210px;max-height:210px}
   .hero-content{padding:0 1rem 1.75rem 1rem}
+  .home-about-image{object-position:center 10%;}
 }
 
+/* ABOUT HERO: reduce the title stack on medium screens */
 @media (max-width:1100px){
   .hero.hero--about .hero-content{justify-content:flex-start}
   .hero.hero--about .falling-about-title{justify-content:flex-start;width:100%}
@@ -873,6 +983,7 @@ nav a:hover,nav a:focus{text-decoration:underline}
   .hero.hero--about .falling-es span:nth-child(n+16){display:none}
 }
 
+/* ABOUT HERO: tighter spacing for tablets */
 @media (max-width:820px){
   .hero.hero--about .hero-content{padding:0 1.25rem;justify-content:flex-start}
   .hero.hero--about .falling-about-title{justify-content:flex-start;width:100%}
@@ -891,6 +1002,7 @@ nav a:hover,nav a:focus{text-decoration:underline}
   .hero.hero--about .falling-es span:nth-child(10) { transform: translateY(188px); }
 }
 
+/* ABOUT HERO: compact title behavior on phones */
 @media (max-width:700px){
   .hero.hero--about .hero-content{
     padding:0 .6rem !important;

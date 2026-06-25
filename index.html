@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
 
   <body class="site">
     <header>
-      <!-- Major part: branding + primary navigation -->
+      <!-- PAGE HEADER: branding and primary navigation shared across the site -->
       <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
         <!-- REPLACE: Brand - change image src and company name as needed -->
 
@@ -29,7 +29,7 @@
           </div>
         <!--</div>-->
 
-        <!-- REPLACE: Primary nav - edit, remove, or add links for this page -->
+        <!-- PAGE HEADER: primary navigation for this page -->
         <nav aria-label="Primary">
           <ul>
             <!--<li><a href="/services/">Services</a></li>-->
@@ -42,15 +42,15 @@
     </header>
 
     <main class="home-main">
-      <!-- Major part: hero (page title / tagline) - REPLACE title & subtitle -->
+      <!-- HOME HERO: same content, responsive spacing handled in CSS -->
       <section class="hero home-hero has-hero-image">
         <div class="hero-content">
           <h1><!-- REPLACE: Page title -->Sergio Darabcsek</h1>
         </div>
       </section>
 
-      <!-- Major part: main content. Replace or copy the card block below. -->
-      <section style="margin-top:1rem">
+      <!-- HOME CONTENT: card grid stays one source block and reflows for mobile -->
+      <section style="margin-top:.45rem">
         <h2><!-- REPLACE: Section heading -->Explore</h2>
 
         <!-- COPYABLE BLOCK: duplicate <article class="card"> to add more items -->
@@ -58,12 +58,12 @@
           <a href="/aboutMe.html/index.html" style="text-decoration: none;">
             <article class="card card--media">
               <div class="card-content">
-                <h3><!-- REPLACE: Card title -->About Me</h3>
+                <h3><!-- REPLACE: Card title -->About Me / News</h3>
                 <p class="muted"><!-- REPLACE: short description -->A more in depth look at yours truly</p>
               </div>
               <div class="card-media" style="overflow:hidden;">
                 <!-- REPLACE: Image (optional). Keep the onerror handler to hide broken images during development -->
-                <img src="/photos/Home/SergioBuisnessLegacySpeech.jpg" alt="Sergio Business Legacy Speech" style="transform:scale(1.08);object-position:center;" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+                <img class="home-about-image" src="/photos/Home/SergioBuisnessLegacySpeech.jpg" alt="Sergio Business Legacy Speech" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
                 <div class="media-placeholder">Image</div>
               </div>
             </article>
@@ -118,3 +118,5 @@
     </footer>
   </body>
 </html>
+ 
+
