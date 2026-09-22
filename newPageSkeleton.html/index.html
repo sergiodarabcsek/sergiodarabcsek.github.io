@@ -1,80 +1,76 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Sergio Darabcsek</title>
-    <link rel="stylesheet" href="../style.css" />
-  </head>
-
-  <body class="site">
-    <header>
-      <!-- PAGE HEADER: branding and primary navigation shared across the site -->
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
-        <!-- REPLACE: Brand - change image src and company name as needed -->
-
-
-        <!--<div class="brand">
-          
-          <a href="/"><img src="/images/hwl-logo.svg" alt="HWL logo"></a>
-        -->
-          <div>
-            <a class="brand-link" href="/" aria-label="Go to home">
-              <strong>Sergio Darabcsek</strong>
-            </a>
-            <nav class="breadcrumb" aria-label="Breadcrumb">
-              <a href="/">Home</a>
-              <span class="sep" aria-hidden="true">&gt;</span>
-              <span aria-current="page">Page Title</span>
-            </nav>
-            <div class="mobile-siue">CIS | <span class="siue">SIUE</span></div>
-          </div>
-        <!--</div>-->
-
-        <!-- PAGE HEADER: primary navigation for this page -->
-        <nav aria-label="Primary">
-          <ul>
-            <!--<li><a href="/services/">Services</a></li>-->
-            <li><a href="../aboutMe.html/index.html">About Me</a></li>
-            <li><a href="../resume/">Resume</a></li>
-            <li><a href="../photos.html/index.html">Photos</a></li>
-          </ul>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Page Title - Sergio Darabcsek</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="site">
+  <header>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+      <div>
+        <a class="brand-link" href="/" aria-label="Go to home">
+          <strong>Sergio Darabcsek</strong>
+        </a>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../">Home</a>
+          <span class="sep" aria-hidden="true">&gt;</span>
+          <a href="../aboutMe.html/index.html">About Me</a>
+          <span class="sep" aria-hidden="true">&gt;</span>
+          <span aria-current="page">Page Title</span>
         </nav>
+        <div class="mobile-siue">CIS | <span class="siue">SIUE</span></div>
       </div>
-    </header>
-
-    <main>
-      <!-- Major part: hero (page title / tagline) - REPLACE title & subtitle -->
-      <section class="hero hero--new-page">
-        <div class="hero-content">
-          <h1><!-- REPLACE: Page title -->Page Title</h1>
-          <p class="muted"><!-- REPLACE: Short tagline -->Short page subtitle</p>
-        </div>
-      </section>
-
-      <!-- Major part: main content. Replace or copy the card block below. -->
-      <section style="margin-top:1rem">
-        <h2><!-- REPLACE: Section heading -->Section Heading</h2>
-        <p class="muted"><!-- REPLACE: short description -->Add content here.</p>
-      </section>
-    </main>
-
-    <footer>
-      <!-- Major part: contact/legal/social. Keep it small and repeatable. -->
-      <div class="cols">
-        <section>
-          <strong>Contact</strong>
-          <!-- REPLACE: contact address and phone -->
-          <br><a href="mailto:darabcseksergio02@gmail.com">darabcseksergio02@gmail.com</a><br><p>Phone   (636)-515-0049</p>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="../aboutMe.html/index.html">About Me</a></li>
+          <li><a href="../resume/">Resume</a></li>
+          <li><a href="../photos.html/index.html">Photos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <article class="news-article">
+      <div class="news-article-summary-layout">
+        <section class="section news-article-summary">
+          <div class="section-body">
+            <div class="section-title">Page Title</div>
+            <p>Replace this paragraph with the page introduction. This section mirrors the summary layout used by the legacy news page so each informational card follows the same visual structure.</p>
+            <div class="scholarship-summary">
+              <p>Optional list heading:</p>
+              <ul>
+                <li>Bullet item one</li>
+                <li>Bullet item two</li>
+                <li>Bullet item three</li>
+              </ul>
+            </div>
+          </div>
         </section>
-
-
-        <section>
-          <strong>Follow</strong>
-          <p class="muted"><a href="https://www.linkedin.com/in/sergiodarabcsek/">LinkedIn</a><br><a href="https://www.instagram.com/sergio_darabcsek/">Instagram</a></p>
+        <figure class="news-article-image-wrapper" aria-label="Blank image placeholder" style="background:#e9edf3; border:1px solid #d9dfeb; display:flex; align-items:center; justify-content:center; min-height:240px; color:#6b7280; font-size:0.9rem;">
+          Image Placeholder
+        </figure>
+        <section class="section news-article-conclusion">
+          <div class="section-body">
+            <div class="section-title">Conclusion</div>
+            <p>Use this final section for a closing statement or summary that wraps up the page content in the same style as the business legacy article.</p>
+          </div>
         </section>
       </div>
-    </footer>
-  </body>
+    </article>
+  </main>
+  <footer>
+    <div class="cols">
+      <section>
+        <strong>Contact</strong>
+        <br><a href="mailto:darabcseksergio02@gmail.com">darabcseksergio02@gmail.com</a><br><p>Phone   (636)-515-0049</p>
+      </section>
+      <section>
+        <strong>Follow</strong>
+        <p class="muted"><a href="https://www.linkedin.com/in/sergiodarabcsek/">LinkedIn</a><br><a href="https://www.instagram.com/sergio_darabcsek/">Instagram</a></p>
+      </section>
+    </div>
+  </footer>
+</body>
 </html>
-
